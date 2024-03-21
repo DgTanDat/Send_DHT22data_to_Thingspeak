@@ -1175,3 +1175,13 @@
 703	1498	7318675757954234	D:/CE232_IDF/Rd_DHT22/build/bootloader/bootloader.elf	7544919c76e8af3d
 703	1498	7318675757954234	D:/CE232_IDF/Rd_DHT22/build/bootloader/bootloader.bin	7544919c76e8af3d
 703	1498	7318675757954234	D:/CE232_IDF/Rd_DHT22/build/bootloader/bootloader.map	7544919c76e8af3d
+366	685	0	esp-idf/esptool_py/CMakeFiles/app_check_size	993bf5d2e982274
+366	685	0	D:/CE232_IDF/Rd_DHT22/build/esp-idf/esptool_py/CMakeFiles/app_check_size	993bf5d2e982274
+357	766	7318675757954234	bootloader-prefix/src/bootloader-stamp/bootloader-build	7544919c76e8af3d
+357	766	7318675757954234	bootloader/bootloader.elf	7544919c76e8af3d
+357	766	7318675757954234	bootloader/bootloader.bin	7544919c76e8af3d
+357	766	7318675757954234	bootloader/bootloader.map	7544919c76e8af3d
+357	766	7318675757954234	D:/CE232_IDF/Rd_DHT22/build/bootloader-prefix/src/bootloader-stamp/bootloader-build	7544919c76e8af3d
+357	766	7318675757954234	D:/CE232_IDF/Rd_DHT22/build/bootloader/bootloader.elf	7544919c76e8af3d
+357	766	7318675757954234	D:/CE232_IDF/Rd_DHT22/build/bootloader/bootloader.bin	7544919c76e8af3d
+357	766	7318675757954234	D:/CE232_IDF/Rd_DHT22/build/bootloader/bootloader.map	7544919c76e8af3d
