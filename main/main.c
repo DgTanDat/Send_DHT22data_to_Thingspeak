@@ -24,11 +24,11 @@ char POST[100];
 char recv_buf[512];
 
 #define SENSOR_TYPE DHT_TYPE_AM2301
+#define USER_SSID "d"
+#define USER_PASSWORD "21521927"
 
 static const char *TAG = "example";
 
-const char *ssid = "d";
-const char *pass = "21521927";
 int retry_num=0;
 float temperature, humidity;
 static void wifi_event_handler(void *event_handler_arg, esp_event_base_t event_base, int32_t event_id,void *event_data){
@@ -64,22 +64,17 @@ void wifi_connection()
     esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, wifi_event_handler, NULL);
     wifi_config_t wifi_configuration = {
         .sta = {
-            .ssid = "d",
-            .password = "21521927",
-            
-           }
-    
+            .ssid = USER_SSID,
+            .password = USER_PASSWORD
+            }
         };
-    strcpy((char*)wifi_configuration.sta.ssid, ssid);
-    strcpy((char*)wifi_configuration.sta.password, pass);    
-    //esp_log_write(ESP_LOG_INFO, "Kconfig", "SSID=%s, PASS=%s", ssid, pass);
     esp_wifi_set_config(ESP_IF_WIFI_STA, &wifi_configuration);
     // 3 - Wi-Fi Start Phase
     esp_wifi_start();
     esp_wifi_set_mode(WIFI_MODE_STA);
     // 4- Wi-Fi Connect Phase
     esp_wifi_connect();
-    printf( "wifi_init_softap finished. SSID:%s  password:%s",ssid,pass);
+    printf( "wifi_init_softap finished. SSID:%s  password:%s",USER_SSID,USER_PASSWORD);
     
 }
 
@@ -129,13 +124,6 @@ static void http_get_task(void *pvParameters)
         ESP_LOGI(TAG, "... connected");
         freeaddrinfo(res);
 
-        //sprintf(POST, "api_key=CK1HXXLYMBPFRA5B&field1=%d&field2=%d", 10, 10);
-        // sprintf(REQUEST,    "POST /update HTTP/1.1\n"
-        //                     "Host: api.thingspeak.com\n"    
-        //                     "Connection: close\n"   
-        //                     "Content-Type: application/x-www-form-urlencodeed\n"    
-        //                     "Content-Length:%d\n\n"
-        //                     "%s\n",strlen(POST),POST);
         sprintf(REQUEST, "GET http://api.thingspeak.com/update?api_key=CK1HXXLYMBPFRA5B&field1=%f&field2=%f\n\n", temperature, humidity);
 
 
